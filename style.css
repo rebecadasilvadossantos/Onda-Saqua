@@ -1,0 +1,127 @@
+/* ========================================
+   1. FONTES
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech&display=swap');
+
+
+/* ========================================
+   2. CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   3. ELEMENTOS GERAIS
+======================================== */
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* ========================================
+   4. CABEÇALHO
+======================================== */
+
+header {
+    background-color: #3bb6db;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+
+/* ========================================
+   5. NOME DO PROJETO
+======================================== */
+
+.nome_projeto {
+    color: #255594;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+/* ========================================
+   6. MENU DE NAVEGAÇÃO
+======================================== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.opcao {
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* ========================================
+   7. BOTÕES DO MENU
+======================================== */
+
+.navbar .menu .opcao .nave-link {
+    display: block;
+    padding: 5px 18px;
+    color: #ffffff;
+    background: #FFD261;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+/* ========================================
+   8. EFEITOS DOS BOTÕES
+======================================== */
+
+.nave-link:hover {
+    background: #255594;
+    transform: translateY(-3px);
+}
+
+.nave-link:active {
+    transform: scale(0.95);
+}
+
+
+/* ========================================
+   sdbdjjd
+======================================== */
+.pag {
+    padding: 30px;
+    min-height: 70vh;
+}
