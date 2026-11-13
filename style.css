@@ -1,8 +1,3 @@
-/* =====================================================
-   ONDA SAQUA
-   IDENTIDADE VISUAL RETRÔ PRAIANA
-===================================================== */
-
 /* FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech&display=swap');
 
@@ -874,5 +869,165 @@ header {
 
     .pag {
         padding: 14px;
+    }
+}
+
+/* =========================================
+   19. PAINEL DE PREVISÃO DO CLIMA E ONDAS
+========================================= */
+
+#previsao {
+    background-color: var(--creme);
+    padding: 35px 25px;
+}
+
+/* CABEÇALHO */
+
+.previsao-cabecalho {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 35px;
+}
+
+.previsao-cabecalho h2 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.previsao-cabecalho p {
+    font-size: 17px;
+    color: var(--marrom-retro);
+}
+
+/* PAINÉIS */
+
+.painel-previsao {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: var(--fundo-pagina);
+    border: 3px solid var(--azul-oceano);
+    border-radius: 18px;
+    box-shadow: 0 5px 14px var(--sombra);
+}
+
+.painel-previsao h3 {
+    font-size: 30px;
+    margin-bottom: 22px;
+}
+
+/* CARTÕES */
+
+.cards-clima {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.card-previsao {
+    background-color: var(--creme);
+    border: 2px solid var(--azul-ceu);
+    border-radius: 14px;
+    padding: 22px 12px;
+    min-height: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.card-previsao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--sombra);
+}
+
+.card-previsao span {
+    font-size: 14px;
+    color: var(--marrom-retro);
+}
+
+.card-previsao strong {
+    color: var(--azul-oceano);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+}
+
+.card-previsao small {
+    color: var(--verde-folha);
+    font-size: 13px;
+}
+
+/* AVISO E LOCALIZAÇÃO */
+
+.aviso-previsao {
+    max-width: 1100px;
+    margin: 30px auto 10px;
+    padding: 25px;
+    background-color: var(--verde-agua);
+    border: 3px solid var(--azul-oceano);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.aviso-previsao h3 {
+    font-size: 27px;
+}
+
+.aviso-previsao p {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: var(--azul-oceano);
+}
+
+.aviso-previsao small {
+    display: block;
+    color: var(--marrom-retro);
+    line-height: 1.6;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+    .cards-clima {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    #previsao {
+        padding: 25px 15px;
+    }
+
+    .previsao-cabecalho h2 {
+        font-size: 32px;
+    }
+
+    .painel-previsao {
+        padding: 18px;
+    }
+
+    .painel-previsao h3 {
+        font-size: 25px;
+    }
+
+    .cards-clima {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .card-previsao {
+        padding: 16px 8px;
+        min-height: 110px;
+    }
+
+    .card-previsao strong {
+        font-size: 27px;
+    }
+
+    .card-previsao span {
+        font-size: 12px;
     }
 }
