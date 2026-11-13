@@ -1,0 +1,1038 @@
+/* =====================================================
+   ONDA SAQUA
+   IDENTIDADE VISUAL RETRÔ PRAIANA
+===================================================== */
+
+/* FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech&display=swap');
+
+
+/* -----------------------------------------------------
+   1. VARIÁVEIS DE CORES
+----------------------------------------------------- */
+
+:root {
+    --azul-oceano: #245B78;
+    --amarelo-sol: #FFD261;
+    --coral: #F28B73;
+    --verde-agua: #9BD8C9;
+    --branco: #FFFFFF;
+    --creme: #FFF4DF;
+    --azul-ceu: #A9D8E8;
+    --verde-folha: #668B68;
+    --marrom-retro: #75513D;
+    --fundo-pagina: #CFE3F2;
+    --sombra: rgba(36, 91, 120, 0.15);
+}
+
+
+/* -----------------------------------------------------
+   2. CONFIGURAÇÕES GERAIS
+----------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--fundo-pagina);
+    color: var(--marrom-retro);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: "Share Tech", sans-serif;
+    transition: 0.3s;
+}
+
+input {
+    font-family: Arial, sans-serif;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
+}
+
+
+/* -----------------------------------------------------
+   3. TÍTULOS
+----------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
+}
+
+h2 {
+    color: var(--azul-oceano);
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: var(--azul-oceano);
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+
+/* -----------------------------------------------------
+   4. CABEÇALHO
+----------------------------------------------------- */
+
+header {
+    background-color: var(--azul-oceano);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 10px var(--sombra);
+    position: relative;
+    z-index: 1000;
+}
+
+.nome_projeto {
+    color: var(--branco);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 38px;
+    letter-spacing: 3px;
+}
+
+
+/* -----------------------------------------------------
+   5. MENU DE NAVEGAÇÃO
+----------------------------------------------------- */
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.opcao {
+    font-family: "Share Tech", sans-serif;
+}
+
+.nave-link {
+    display: block;
+    padding: 9px 16px;
+    color: var(--marrom-retro);
+    background-color: var(--amarelo-sol);
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.nave-link:hover {
+    background-color: var(--azul-ceu);
+    color: var(--azul-oceano);
+    transform: translateY(-3px);
+}
+
+.nave-link:active {
+    transform: scale(0.95);
+}
+
+
+/* -----------------------------------------------------
+   6. PÁGINAS
+----------------------------------------------------- */
+
+.pag {
+    min-height: 70vh;
+    padding: 30px;
+    background-color: var(--fundo-pagina);
+}
+
+.pag > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pag > p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 25px;
+    font-size: 17px;
+}
+
+
+/* -----------------------------------------------------
+   7. PÁGINA INICIAL
+----------------------------------------------------- */
+
+#inicio {
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--creme);
+}
+
+#banner1 {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.apresentacao {
+    background-color: var(--fundo-pagina);
+    padding: 70px 30px;
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--azul-oceano);
+    font-family: "Share Tech", sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+.apresentacao h2 {
+    color: var(--azul-oceano);
+    font-size: 46px;
+    margin: 15px 0;
+}
+
+.apresentacao p {
+    color: var(--marrom-retro);
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 25px;
+    line-height: 1.7;
+}
+
+.botao-explorar {
+    display: inline-block;
+    background-color: var(--amarelo-sol);
+    color: var(--azul-oceano);
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-family: "Share Tech", sans-serif;
+    font-size: 18px;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px var(--sombra);
+}
+
+.botao-explorar:hover {
+    background-color: var(--azul-oceano);
+    color: var(--branco);
+    transform: translateY(-4px);
+}
+
+
+/* -----------------------------------------------------
+   8. SOBRE O PROJETO
+----------------------------------------------------- */
+
+.sobre-projeto {
+    padding: 60px 30px;
+    text-align: center;
+    background-color: var(--creme);
+}
+
+.sobre-projeto h2 {
+    color: var(--azul-oceano);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.sobre-projeto p {
+    max-width: 850px;
+    margin: 12px auto;
+    color: var(--marrom-retro);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* -----------------------------------------------------
+   9. CARDS DA PÁGINA INICIAL
+----------------------------------------------------- */
+
+.recursos {
+    padding: 60px 30px;
+    background-color: var(--fundo-pagina);
+    text-align: center;
+}
+
+.recursos h2 {
+    margin-bottom: 30px;
+}
+
+.cards-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card-recurso {
+    background-color: var(--branco);
+    padding: 28px 22px;
+    border: 2px solid var(--azul-ceu);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px var(--sombra);
+    transition: 0.3s;
+}
+
+.card-recurso:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px var(--sombra);
+}
+
+.card-recurso h3 {
+    color: var(--azul-oceano);
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.card-recurso p {
+    color: var(--marrom-retro);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.mensagem-final {
+    background-color: var(--azul-oceano);
+    color: var(--branco);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.mensagem-final h2 {
+    color: var(--amarelo-sol);
+    font-size: 36px;
+}
+
+.mensagem-final p {
+    color: var(--branco);
+    font-size: 17px;
+}
+
+
+/* -----------------------------------------------------
+   10. PÁGINA DE EVENTOS
+----------------------------------------------------- */
+
+#eventos {
+    background-color: var(--fundo-pagina);
+    min-height: 100vh;
+}
+
+#listaEventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.card-evento {
+    background-color: var(--creme);
+    padding: 22px;
+    border-radius: 15px;
+    border: 2px solid var(--azul-ceu);
+    box-shadow: 0 4px 10px var(--sombra);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-evento h3 {
+    color: var(--azul-oceano);
+    margin: 12px 0;
+}
+
+.card-evento p {
+    margin-bottom: 10px;
+}
+
+.etiqueta-evento {
+    display: inline-block;
+    background-color: var(--amarelo-sol);
+    color: var(--azul-oceano);
+    border-radius: 20px;
+    padding: 5px 11px;
+    font-family: "Share Tech", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card-evento button {
+    background-color: var(--azul-oceano);
+    color: var(--branco);
+    padding: 11px 16px;
+    border-radius: 9px;
+    margin-top: auto;
+    width: 100%;
+    font-size: 15px;
+}
+
+.card-evento button:hover {
+    background-color: var(--coral);
+    transform: translateY(-2px);
+}
+
+
+/* -----------------------------------------------------
+   11. PÁGINA DO MAPA
+----------------------------------------------------- */
+
+#mapa {
+    background-color: var(--creme);
+    min-height: 100vh;
+}
+
+#mapa > h2 {
+    text-align: center;
+}
+
+#mapa > p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 25px;
+}
+
+.mapa-conteudo {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+    align-items: start;
+}
+
+#mapaSaquarema {
+    width: 100%;
+    height: 480px;
+    border: 4px solid var(--azul-oceano);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--sombra);
+    z-index: 1;
+    background-color: var(--azul-ceu);
+}
+
+.leaflet-container {
+    font-family: Arial, sans-serif;
+    z-index: 1;
+}
+
+.leaflet-popup-content-wrapper {
+    background-color: var(--creme);
+    color: var(--marrom-retro);
+    border-radius: 12px;
+}
+
+.leaflet-popup-content {
+    line-height: 1.6;
+    min-width: 180px;
+}
+
+.leaflet-popup-content strong {
+    color: var(--azul-oceano);
+    font-size: 15px;
+}
+
+.leaflet-popup-content button {
+    background-color: var(--amarelo-sol);
+    color: var(--azul-oceano);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 8px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.leaflet-popup-content button:hover {
+    background-color: var(--coral);
+    color: var(--branco);
+}
+
+.leaflet-popup-content .botao-visitado {
+    background-color: var(--verde-folha);
+    color: var(--branco);
+}
+
+.erro-mapa {
+    padding: 25px;
+    color: var(--azul-oceano);
+    text-align: center;
+}
+
+
+/* -----------------------------------------------------
+   12. ÁREA DO ROTEIRO
+----------------------------------------------------- */
+
+.area-roteiro {
+    background-color: var(--verde-agua);
+    border: 3px solid var(--azul-oceano);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 5px 12px var(--sombra);
+}
+
+.area-roteiro h3 {
+    color: var(--azul-oceano);
+    font-size: 27px;
+}
+
+.area-roteiro > p {
+    color: var(--marrom-retro);
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+#listaRoteiro {
+    margin-top: 15px;
+}
+
+.destino-roteiro {
+    background-color: var(--creme);
+    border: 2px solid var(--azul-oceano);
+    border-radius: 10px;
+    padding: 13px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 6px var(--sombra);
+}
+
+.destino-roteiro strong {
+    display: block;
+    color: var(--azul-oceano);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.destino-roteiro small {
+    color: var(--marrom-retro);
+    font-size: 13px;
+}
+
+.destino-roteiro p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.destino-roteiro button {
+    background-color: var(--coral);
+    color: var(--branco);
+    padding: 7px 12px;
+    border-radius: 7px;
+    margin-top: 8px;
+}
+
+.destino-roteiro button:hover {
+    background-color: var(--azul-oceano);
+}
+
+#btnSalvarRoteiro {
+    background-color: var(--azul-oceano);
+    color: var(--branco);
+    padding: 13px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+#btnSalvarRoteiro:hover {
+    background-color: var(--coral);
+    transform: translateY(-2px);
+}
+
+
+/* -----------------------------------------------------
+   13. PRAIAS, PREVISÃO E HISTÓRIA
+----------------------------------------------------- */
+
+#praias,
+#previsao,
+#historia {
+    background-color: var(--fundo-pagina);
+    min-height: 100vh;
+}
+
+
+/* -----------------------------------------------------
+   14. MINHA CONTA
+----------------------------------------------------- */
+
+#conta {
+    background-color: var(--creme);
+    min-height: 100vh;
+    text-align: center;
+}
+
+.area-conta {
+    max-width: 900px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+.formulario-conta {
+    background-color: var(--verde-agua);
+    padding: 25px;
+    border: 3px solid var(--azul-oceano);
+    border-radius: 15px;
+    box-shadow: 0 5px 12px var(--sombra);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.formulario-conta h3 {
+    color: var(--azul-oceano);
+    font-size: 28px;
+}
+
+.formulario-conta input {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid var(--azul-ceu);
+    border-radius: 8px;
+    background-color: var(--branco);
+    color: var(--marrom-retro);
+    font-size: 15px;
+    outline: none;
+}
+
+.formulario-conta input:focus {
+    border-color: var(--azul-oceano);
+    box-shadow: 0 0 0 3px rgba(36, 91, 120, 0.12);
+}
+
+.formulario-conta button {
+    background-color: var(--azul-oceano);
+    color: var(--branco);
+    padding: 13px;
+    border-radius: 9px;
+    font-size: 16px;
+}
+
+.formulario-conta button:hover {
+    background-color: var(--coral);
+}
+
+
+/* -----------------------------------------------------
+   15. PERFIL DO USUÁRIO
+----------------------------------------------------- */
+
+#perfilUsuario {
+    grid-column: 1 / -1;
+    width: 100%;
+    background-color: var(--verde-agua);
+    border: 3px solid var(--azul-oceano);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 12px var(--sombra);
+    text-align: left;
+}
+
+#perfilUsuario h3 {
+    margin-top: 18px;
+}
+
+#nomeUsuario {
+    color: var(--azul-oceano);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#roteirosSalvos,
+#historicoVisitas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.item-perfil {
+    background-color: var(--creme);
+    border: 2px solid var(--azul-ceu);
+    border-radius: 10px;
+    padding: 14px;
+    overflow-wrap: anywhere;
+}
+
+.item-perfil strong {
+    color: var(--azul-oceano);
+}
+
+.item-perfil p,
+.item-perfil small {
+    display: block;
+    margin-top: 5px;
+}
+
+.item-perfil button {
+    background-color: var(--azul-oceano);
+    color: var(--branco);
+    padding: 9px 13px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.item-perfil button:hover {
+    background-color: var(--coral);
+}
+
+#btnSair {
+    background-color: var(--coral);
+    color: var(--branco);
+    padding: 12px 22px;
+    border-radius: 9px;
+    margin-top: 20px;
+}
+
+#btnSair:hover {
+    background-color: var(--azul-oceano);
+}
+
+#mensagemConta {
+    grid-column: 1 / -1;
+    color: var(--azul-oceano);
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* -----------------------------------------------------
+   16. RESPONSIVIDADE PARA TABLETS
+----------------------------------------------------- */
+
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar .menu {
+        justify-content: center;
+    }
+
+    .mapa-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    #mapaSaquarema {
+        height: 420px;
+    }
+}
+
+
+/* -----------------------------------------------------
+   17. RESPONSIVIDADE PARA CELULARES
+----------------------------------------------------- */
+
+@media (max-width: 600px) {
+    header {
+        padding: 18px 12px;
+    }
+
+    .nome_projeto {
+        font-size: 34px;
+    }
+
+    .navbar .menu {
+        gap: 7px;
+    }
+
+    .nave-link {
+        padding: 8px 11px;
+        font-size: 13px;
+    }
+
+    .pag {
+        padding: 18px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .apresentacao {
+        padding: 45px 20px;
+    }
+
+    .apresentacao h2 {
+        font-size: 34px;
+    }
+
+    .apresentacao p {
+        font-size: 16px;
+    }
+
+    .sobre-projeto,
+    .recursos {
+        padding: 40px 20px;
+    }
+
+    .mensagem-final {
+        padding: 35px 20px;
+    }
+
+    .cards-recursos {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa-conteudo {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #mapaSaquarema {
+        height: 350px;
+    }
+
+    .area-roteiro {
+        padding: 17px;
+    }
+
+    .area-conta {
+        grid-template-columns: 1fr;
+    }
+
+    #perfilUsuario {
+        grid-column: 1;
+    }
+
+    .formulario-conta {
+        padding: 20px;
+    }
+
+    #listaEventos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* -----------------------------------------------------
+   18. AJUSTES PARA TELAS PEQUENAS
+----------------------------------------------------- */
+
+@media (max-width: 380px) {
+    .nome_projeto {
+        font-size: 29px;
+    }
+
+    .nave-link {
+        padding: 7px 9px;
+        font-size: 12px;
+    }
+
+    #mapaSaquarema {
+        height: 300px;
+    }
+
+    .apresentacao h2 {
+        font-size: 29px;
+    }
+
+    .pag {
+        padding: 14px;
+    }
+}
+
+/* =========================================
+   19. PAINEL DE PREVISÃO DO CLIMA E ONDAS
+========================================= */
+
+#previsao {
+    background-color: var(--creme);
+    padding: 35px 25px;
+}
+
+/* CABEÇALHO */
+
+.previsao-cabecalho {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 35px;
+}
+
+.previsao-cabecalho h2 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.previsao-cabecalho p {
+    font-size: 17px;
+    color: var(--marrom-retro);
+}
+
+/* PAINÉIS */
+
+.painel-previsao {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: var(--fundo-pagina);
+    border: 3px solid var(--azul-oceano);
+    border-radius: 18px;
+    box-shadow: 0 5px 14px var(--sombra);
+}
+
+.painel-previsao h3 {
+    font-size: 30px;
+    margin-bottom: 22px;
+}
+
+/* CARTÕES */
+
+.cards-clima {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.card-previsao {
+    background-color: var(--creme);
+    border: 2px solid var(--azul-ceu);
+    border-radius: 14px;
+    padding: 22px 12px;
+    min-height: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.card-previsao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--sombra);
+}
+
+.card-previsao span {
+    font-size: 14px;
+    color: var(--marrom-retro);
+}
+
+.card-previsao strong {
+    color: var(--azul-oceano);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+}
+
+.card-previsao small {
+    color: var(--verde-folha);
+    font-size: 13px;
+}
+
+/* AVISO E LOCALIZAÇÃO */
+
+.aviso-previsao {
+    max-width: 1100px;
+    margin: 30px auto 10px;
+    padding: 25px;
+    background-color: var(--verde-agua);
+    border: 3px solid var(--azul-oceano);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.aviso-previsao h3 {
+    font-size: 27px;
+}
+
+.aviso-previsao p {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: var(--azul-oceano);
+}
+
+.aviso-previsao small {
+    display: block;
+    color: var(--marrom-retro);
+    line-height: 1.6;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+    .cards-clima {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    #previsao {
+        padding: 25px 15px;
+    }
+
+    .previsao-cabecalho h2 {
+        font-size: 32px;
+    }
+
+    .painel-previsao {
+        padding: 18px;
+    }
+
+    .painel-previsao h3 {
+        font-size: 25px;
+    }
+
+    .cards-clima {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .card-previsao {
+        padding: 16px 8px;
+        min-height: 110px;
+    }
+
+    .card-previsao strong {
+        font-size: 27px;
+    }
+
+    .card-previsao span {
+        font-size: 12px;
+    }
+}
