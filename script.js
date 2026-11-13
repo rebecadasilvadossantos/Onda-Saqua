@@ -1,8 +1,3 @@
-/* =====================================================
-   ONDA SAQUA - JAVASCRIPT COMPLETO
-   Mapa, eventos, roteiros e conta demonstrativa
-===================================================== */
-
 /* -----------------------------------------------------
    1. NAVEGAÇÃO ENTRE AS PÁGINAS
 ----------------------------------------------------- */
@@ -859,3 +854,175 @@ if (botaoSair) {
 renderizarEventos();
 mostrarPagina("inicio");
 atualizarPerfil();
+
+/* =========================================
+   20. PREVISÃO REAL DO CLIMA E DAS ONDAS
+   SAQUAREMA - RJ
+========================================= */
+
+const coordenadasSaquarema = {
+    latitude: -22.936,
+    longitude: -42.496
+};
+
+function interpretarClima(codigo) {
+    const condicoes = {
+        0: "Céu limpo ☀️",
+        1: "Predominantemente limpo 🌤️",
+        2: "Parcialmente nublado ⛅",
+        3: "Nublado ☁️",
+        45: "Neblina 🌫️",
+        48: "Neblina intensa 🌫️",
+        51: "Garoa leve 🌦️",
+        53: "Garoa moderada 🌦️",
+        55: "Garoa intensa 🌧️",
+        61: "Chuva leve 🌧️",
+        63: "Chuva moderada 🌧️",
+        65: "Chuva forte ⛈️",
+        80: "Pancadas de chuva 🌦️",
+        81: "Pancadas moderadas 🌧️",
+        82: "Pancadas fortes ⛈️",
+        95: "Tempestade ⛈️"
+    };
+
+    return condicoes[codigo] || "Condição variável";
+}
+
+function converterDirecao(graus) {
+    if (graus === null || graus === undefined) {
+        return "--";
+    }
+
+    const direcoes = [
+        "N", "NE", "L", "SE",
+        "S", "SO", "O", "NO"
+    ];
+
+    return direcoes[Math.round(graus / 45) % 8];
+}
+
+async function carregarPrevisaoClima() {
+    const latitude = coordenadasSaquarema.latitude;
+    const longitude = coordenadasSaquarema.longitude;
+
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&timezone=America%2FSao_Paulo`;
+
+    try {
+        const resposta = await fetch(url);
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao consultar o clima");
+        }
+
+        const dados = await resposta.json();
+        const clima = dados.current;
+
+        document.getElementById("temperatura").textContent =
+            `${clima.temperature_2m}°C`;
+
+        document.getElementById("sensacaoTermica").textContent =
+            `${clima.apparent_temperature}°C`;
+
+        document.getElementById("umidade").textContent =
+            `${clima.relative_humidity_2m}%`;
+
+        document.getElementById("ventoClima").textContent =
+            `${clima.wind_speed_10m} km/h`;
+
+        document.getElementById("condicaoClima").textContent =
+            interpretarClima(clima.weather_code);
+
+        return true;
+
+    } catch (erro) {
+        console.error("Erro na previsão do clima:", erro);
+        document.getElementById("condicaoClima").textContent =
+            "Previsão indisponível";
+
+        return false;
+    }
+}
+
+async function carregarPrevisaoOndas() {
+    const latitude = coordenadasSaquarema.latitude;
+    const longitude = coordenadasSaquarema.longitude;
+
+    const url = `https://marine-api.open-meteo.com/v1/marine?latitude=${latitude}&longitude=${longitude}&current=wave_height,wave_direction,wave_period&timezone=America%2FSao_Paulo`;
+
+    try {
+        const resposta = await fetch(url);
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao consultar as ondas");
+        }
+
+        const dados = await resposta.json();
+        const ondas = dados.current;
+
+        document.getElementById("alturaOndas").textContent =
+            ondas.wave_height != null
+                ? `${ondas.wave_height} m`
+                : "-- m";
+
+        document.getElementById("periodoOndas").textContent =
+            ondas.wave_period != null
+                ? `${ondas.wave_period} s`
+                : "-- s";
+
+        document.getElementById("direcaoOndas").textContent =
+            converterDirecao(ondas.wave_direction);
+
+        return true;
+
+    } catch (erro) {
+        console.error("Erro na previsão das ondas:", erro);
+
+        document.getElementById("alturaOndas").textContent = "-- m";
+        document.getElementById("periodoOndas").textContent = "-- s";
+        document.getElementById("direcaoOndas").textContent =
+            "Indisponível";
+
+        return false;
+    }
+}
+
+async function atualizarPrevisao() {
+    const aviso = document.getElementById("atualizacaoPrevisao");
+
+    if (!aviso) return;
+
+    aviso.textContent = "Atualizando informações...";
+
+    const [climaOk, ondasOk] = await Promise.all([
+        carregarPrevisaoClima(),
+        carregarPrevisaoOndas()
+    ]);
+
+    const horario = new Date().toLocaleString("pt-BR");
+
+    aviso.textContent =
+        `Última consulta: ${horario}. ` +
+        (climaOk && ondasOk
+            ? "Informações carregadas."
+            : "Algumas informações estão indisponíveis.");
+}
+
+/* Atualizar quando abrir a aba Previsão */
+
+const navegacaoOriginal = mostrarPagina;
+
+mostrarPagina = function(id) {
+    navegacaoOriginal(id);
+
+    if (id === "previsao") {
+        atualizarPrevisao();
+    }
+};
+
+/* Primeira consulta */
+
+atualizarPrevisao();
+
+/* Atualização automática a cada 30 minutos */
+
+setInterval(atualizarPrevisao, 30 * 60 * 1000);
