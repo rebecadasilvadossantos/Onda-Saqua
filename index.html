@@ -252,16 +252,93 @@
 
 
         <!-- PREVISÃO -->
-        <section id="previsao" class="pag" style="display: none;">
+<section id="previsao" class="pag" style="display: none;">
 
-            <h2>Previsão</h2>
+    <div class="previsao-cabecalho">
+        <span class="subtitulo">ACOMPANHE AS CONDIÇÕES</span>
+        <h2>Clima e Ondas de Saquarema</h2>
+        <p>
+            Confira as condições do tempo e do mar
+            antes de aproveitar o litoral.
+        </p>
+    </div>
 
-            <p>
-                Consulte informações sobre clima, ondas,
-                vento e condições do mar.
-            </p>
+    <!-- CLIMA -->
+    <div class="painel-previsao">
 
-        </section>
+        <h3>Previsão do tempo</h3>
+
+        <div class="cards-clima">
+
+            <div class="card-previsao">
+                <span>Temperatura</span>
+                <strong id="temperatura">--°C</strong>
+                <small id="condicaoClima">Carregando...</small>
+            </div>
+
+            <div class="card-previsao">
+                <span>Sensação térmica</span>
+                <strong id="sensacaoTermica">--°C</strong>
+            </div>
+
+            <div class="card-previsao">
+                <span>Umidade</span>
+                <strong id="umidade">--%</strong>
+            </div>
+
+            <div class="card-previsao">
+                <span>Vento</span>
+                <strong id="ventoClima">-- km/h</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ONDAS -->
+    <div class="painel-previsao">
+
+        <h3>Condições das ondas</h3>
+
+        <div class="cards-clima">
+
+            <div class="card-previsao">
+                <span>Altura das ondas</span>
+                <strong id="alturaOndas">-- m</strong>
+            </div>
+
+            <div class="card-previsao">
+                <span>Período das ondas</span>
+                <strong id="periodoOndas">-- s</strong>
+            </div>
+
+            <div class="card-previsao">
+                <span>Direção das ondas</span>
+                <strong id="direcaoOndas">--</strong>
+            </div>
+
+            <div class="card-previsao">
+                <span>Vento no mar</span>
+                <strong id="ventoMar">-- km/h</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- STATUS -->
+    <div class="aviso-previsao">
+        <h3> Saquarema - RJ</h3>
+        <p id="atualizacaoPrevisao">
+            Aguardando dados meteorológicos...
+        </p>
+        <small>
+            Previsões são estimativas e podem mudar.
+            Consulte as condições locais antes de entrar no mar.
+        </small>
+    </div>
+
+</section>
 
 
         <!-- HISTÓRIA -->
